@@ -1,0 +1,45 @@
+﻿@model Passenger
+
+<h1> Passenger SingUp</h1>
+@using (Html.BeginForm("SignUp", "User", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.name)
+        @Html.TextBoxFor(model => model.name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.name)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.username)
+        @Html.TextBoxFor(model => model.username, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.username)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.password)
+        @Html.TextBoxFor(model => model.password, new {type="password", @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.password)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.Gender)
+        @Html.TextBoxFor(model => model.Gender, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.Gender)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.email)
+        @Html.TextBoxFor(model => model.email, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.email)
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.phone_n)
+        @Html.TextBoxFor(model => model.phone_n, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => model.phone_n)
+
+    </div>
+
+    <button type="submit" class="btn btn-primary">Register</button>
+    <a asp-action="Login"asp-controller="User" class="btn btn-primary">Login</a>
+}
+@TempData["msg"]

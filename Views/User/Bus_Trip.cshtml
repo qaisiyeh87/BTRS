@@ -1,0 +1,45 @@
+﻿@model IEnumerable<BTRS.Models.Trip>
+
+@{
+    ViewData["Title"] = "Bus_Trip";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>Welcome to our website  </h1>
+<h3>Book your travel</h3>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.trip_dist)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.S_date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.E_date)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.trip_dist)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.S_date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.E_date)
+            </td>
+            <td>
+                <a asp-action="Book" asp-route-id="@item.Id">Book</a> 
+                
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

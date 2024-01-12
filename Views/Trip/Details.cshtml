@@ -1,0 +1,37 @@
+﻿@model BTRS.Models.Trip
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Trip</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.trip_dist)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.trip_dist)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.S_date)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.S_date)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.E_date)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.E_date)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
